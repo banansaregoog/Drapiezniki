@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paper Page</title>
+<!--Do kalendarza-->
+  <style>
+    /* ===== KALENDARZ ===== */
+    .cal-wrapper {
+      margin: 30px 0;
+      font-family: Georgia, serif;
+    }
+
+    .cal-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1.2rem;
+    }
+
+    .cal-title {
+      text-align: center;
+    }
+
+    .cal-title .month-name {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .cal-title .year-lbl {
+      font-size: 0.75rem;
+      color: #ffaa0b;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-top: 2px;
+    }
+
+    .cal-nav {
+      background: #ffaa0b;
+      border: none;
+      color: #fff;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s, transform 0.15s;
+    }
+
+    .cal-nav:hover {
+      background: #e09800;
+      transform: scale(1.1);
+    }
+
+    .days-of-week {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      margin-bottom: 4px;
+      gap: 3px;
+    }
+
+    .dow {
+      text-align: center;
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #999;
+      padding: 4px 0;
+    }
+
+    .dow.weekend { color: #ff0000; }
+
+    .cal-grid {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 3px;
+    }
+
+    .day-cell {
+      aspect-ratio: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 6px;
+      cursor: pointer;
+      border: 1px solid transparent;
+      background: transparent;
+      user-select: none;
+      transition: background 0.15s, transform 0.15s;
+      font-size: 0.85rem;
+      color: #333;
+    }
+
+    .day-cell:hover {
+      background: #fff8e6;
+      border-color: #ffaa0b;
+      transform: scale(1.08);
+    }
+
+    .day-cell.other-month {
+      color: #ccc;
+    }
+
+    .day-cell.weekend:not(.other-month) {
+      color: #ff0000;
+    }
+
+    .day-cell.today {
+      background: #ffaa0b;
+      border-color: #ffaa0b;
+      color: #fff;
+      font-weight: bold;
+    }
+
+    .day-cell.today:hover {
+      background: #e09800;
+    }
+
+    .day-cell.selected:not(.today) {
+      background: #fff3cc;
+      border-color: #ffaa0b;
+    }
+  </style>
+<!--Koniec programu do kalendarza-->
+</head>
+<body style="background-color:#e0e0e0; display:flex; justify-content:center; padding:40px 20px; min-height:100vh; margin:0; font-family:Georgia, serif;">
+
+  <div style="background-color:#ffffff; border-radius:12px; box-shadow:0 2px 4px rgba(0,0,0,0.1), 0 8px 24px rgba(0,0,0,0.15); padding:60px 80px; max-width:750px; width:100%; min-height:90vh;">
+
+<!--Wstęp-->
+    <h1 style="text-align: center;">Bocian Czarny</h1>
+<!--Koniec Wstępu-->
+
+<!--Wpis-->
+    <p style="border-bottom: 2px solid black;">Bocian czarny jest rzadkim ptakiem lęgowym w Polsce = szacuje się ok. 
+      <span style="color: red;"> 2000 par.</span> W przeciwieństwie do bociana białego, od którego jest nieznacznie mniejszy, stroni od ludzi i gniazda 
+      buduje w głębi lasu, choć ostatnio notuje się nieliczne przypadki gniazdowania bliżej zabudowań. Warunkiem jego 
+      obecności są mokradła: bagniste łąki, stawy, płytkie rzeki czy zalewiska bobrowe.</p>
+<!--Koniec Wpisu-->
+
+<!--Rozwinięcie-->
+<table style="border-collapse: collapse; width: 100%;">
+  <tr>
+    <td style="text-align: left; border-bottom: 2px solid black;">
+      Bocian czarny objęty jest ochroną strefową gniazd. W promieniu 100 m przez cały rok obowiązuje zakaz wszelkich działań 
+      mogących płoszyć ptaki - prac leśnych, fotografowania, wycieczek itp. Strefa nie musi być idealnie okrągła i może być 
+      węższa od strony granicy lasu. W promieniu 500 m gospodarka leśna jest dozwolona poza okresem lęgowym, tj. od<span style="color: red;"> 
+      1 września do 14 marca.</span>
+    </td>
+    <td style="text-align: right;">
+      <img src="bocian_czarny.png" style="border: solid #ffaa0b; border-radius: 12px; width: 200px; height: 250px;">
+    </td>
+  </tr>
+  <tr>
+    <td style="text-align: left;">
+      Bocian czarny żeruje w płytkich wodach - strumieniach, zakolach rzek, rozlewiskach i wysychających stawach. 
+      Brodzi powoli lub stoi nieruchomo w zasadzce, wypatrując ofiar. W nasłonecznionych miejscach rozkłada skrzydła, 
+      zacieniając wodę, by wyeliminować odblaski i poprawić widoczność. Zdobycz chwyta błyskawicznym wyrzutem głowy i 
+      długiego dzioba. Żywi się głównie małymi rybami, żabami, ślimakami i większymi owadami, rzadziej drobnymi gryzoniami.
+      Niestety, gif  z czarnym bocianiem nie udało się znaleść, zamist tego jest normalny bocian
+    </td>
+    <td style="text-align: right;">
+      <img src="bocian_czarny.gif" style="border: solid #ffaa0b; border-radius: 12px; width: 200px; height: 250px;">
+    </td>
+  </tr>
+</table>
+<!--Koniec rozwinięcia-->
+
+<!--Kalendarz-->
+<div class="cal-wrapper">
+  <div class="cal-header">
+    <button class="cal-nav" id="prevBtn">&#8592;</button>
+    <div class="cal-title">
+      <div class="month-name" id="monthName"></div>
+      <div class="year-lbl" id="yearName"></div>
+    </div>
+    <button class="cal-nav" id="nextBtn">&#8594;</button>
+  </div>
+
+  <div class="days-of-week">
+    <div class="dow">Pn</div>
+    <div class="dow">Wt</div>
+    <div class="dow">Śr</div>
+    <div class="dow">Cz</div>
+    <div class="dow">Pt</div>
+    <div class="dow weekend">Sb</div>
+    <div class="dow weekend">Nd</div>
+  </div>
+
+  <div class="cal-grid" id="calGrid"></div>
+</div>
+
+<script>
+  const MONTHS = [
+    'Styczeń','Luty','Marzec','Kwiecień','Maj','Czerwiec',
+    'Lipiec','Sierpień','Wrzesień','Październik','Listopad','Grudzień'
+  ];
+
+  const today = new Date();
+  let cur = { y: today.getFullYear(), m: today.getMonth() };
+  let selectedDate = null;
+
+  function render() {
+    document.getElementById('monthName').textContent = MONTHS[cur.m];
+    document.getElementById('yearName').textContent = cur.y;
+
+    const grid = document.getElementById('calGrid');
+    grid.innerHTML = '';
+
+    const firstDay = new Date(cur.y, cur.m, 1).getDay();
+    const startOffset = (firstDay === 0) ? 6 : firstDay - 1;
+    const daysInMonth = new Date(cur.y, cur.m + 1, 0).getDate();
+    const daysInPrev = new Date(cur.y, cur.m, 0).getDate();
+    const totalCells = Math.ceil((startOffset + daysInMonth) / 7) * 7;
+
+    for (let i = 0; i < totalCells; i++) {
+      const cell = document.createElement('div');
+      cell.className = 'day-cell';
+
+      let cY = cur.y, cM = cur.m, cD;
+      let isOther = false;
+
+      if (i < startOffset) {
+        cD = daysInPrev - startOffset + 1 + i;
+        cM = cur.m - 1;
+        if (cM < 0) { cM = 11; cY--; }
+        isOther = true;
+      } else if (i >= startOffset + daysInMonth) {
+        cD = i - startOffset - daysInMonth + 1;
+        cM = cur.m + 1;
+        if (cM > 11) { cM = 0; cY++; }
+        isOther = true;
+      } else {
+        cD = i - startOffset + 1;
+      }
+
+      const isWeekend = (i % 7 === 5 || i % 7 === 6);
+      const isToday = !isOther && cD === today.getDate() && cur.m === today.getMonth() && cur.y === today.getFullYear();
+      const key = `${cY}-${cM}-${cD}`;
+      const isSelected = selectedDate === key;
+
+      if (isOther)   cell.classList.add('other-month');
+      if (isWeekend) cell.classList.add('weekend');
+      if (isToday)   cell.classList.add('today');
+      if (isSelected) cell.classList.add('selected');
+
+      cell.textContent = cD;
+      cell.addEventListener('click', () => {
+        selectedDate = key;
+        document.querySelectorAll('.day-cell').forEach(c => c.classList.remove('selected'));
+        if (!cell.classList.contains('today')) cell.classList.add('selected');
+      });
+
+      grid.appendChild(cell);
+    }
+  }
+
+  document.getElementById('prevBtn').addEventListener('click', () => {
+    cur.m--; if (cur.m < 0) { cur.m = 11; cur.y--; } render();
+  });
+  document.getElementById('nextBtn').addEventListener('click', () => {
+    cur.m++; if (cur.m > 11) { cur.m = 0; cur.y++; } render();
+  });
+
+  render();
+</script>
+<!--Koniec Kalendarza-->
+
+<br><br>
+<!-- Link do stron-->
+    <div style="text-align: center;">
+      <br>
+        <a href="strona glowna.html" style="display:inline-block; serif;">
+        <button style="background-color: #ffaa0b; color:#ffffff; padding:12px 24px; border-radius:8px; cursor:pointer; display:inline-block;">
+        Strona Główna</button>
+        </a>
+        <a href="str1.html" style="display:inline-block; serif;">
+        <button style="background-color: #ffaa0b; color:#ffffff; padding:12px 24px; border-radius:8px; cursor:pointer; display:inline-block;">
+        Myszołów Zwyczajny</button>
+        </a>
+        <a href="str2.html" style="display:inline-block; serif;">
+        <button style="background-color: #ffaa0b; color:#ffffff; padding:12px 24px; border-radius:8px; cursor:pointer; display:inline-block;">
+        Lis Rudy</button>
+        </a>
+        <a href="str3.html" style="display:inline-block; serif;">
+        <button style="background-color: #ffaa0b; color:#ffffff; padding:12px 24px; border-radius:8px; cursor:pointer; display:inline-block;">
+        Dymówka</button>
+        </a>
+        <a href="str5.html" style="display:inline-block;">
+        <button style="background-color: #ffaa0b; color:#ffffff; padding:12px 24px; border-radius:8px; cursor:pointer; display:inline-block;">
+        Pływacz Zwyczajny</button>
+        </a>
+    </div>
+  </div>
+
+</body>
+</html>

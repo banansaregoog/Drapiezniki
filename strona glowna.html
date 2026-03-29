@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paper Page</title>
+</head>
+<body style="background-color:#e0e0e0; display:flex; justify-content:center; padding:40px 20px; min-height:100vh; margin:0; font-family:Georgia, serif;">
+
+  <div style="background-color:#ffffff; border-radius:12px; box-shadow:0 2px 4px rgba(0,0,0,0.1), 0 8px 24px rgba(0,0,0,0.15); padding:60px 80px; max-width:750px; width:100%; min-height:90vh;">
+<!--Wstęp-->
+    <h1 style="text-align: center;">Drapieżniki</h1>
+<!--Koniec Wstęp-->
+
+<!--Zegar-->
+<span style="text-align:center;">
+    
+  <span id="clock" style="font-size:26px; float: right; color:#000000; letter-spacing:3px; font-weight:bold; border-bottom:2px solid #000000">
+      00:00:00
+  </span>
+<br><br>
+  <span id="date" style="font-size:14px; float: right; font-weight: bold; color:#000000; margin-top:12px;">
+      Loading...
+  </span>
+
+</span>
+  <script>
+    function updateClock() {
+      const now = new Date();
+      const h = String(now.getHours()).padStart(2, "0");
+      const m = String(now.getMinutes()).padStart(2, "0");
+      const s = String(now.getSeconds()).padStart(2, "0");
+      document.getElementById("clock").textContent = h + ":" + m + ":" + s;
+      document.getElementById("date").textContent = now.toDateString();
+    }
+    updateClock();
+    setInterval(updateClock, 1000);
+  </script>
+  <br><br>
+<!--Koniec Zegaru-->
+
+<!--Wpis-->
+    <p style="border-bottom:2px solid #000000">Ze względu na sposób odżywiania organizmy żywe dzielą się na dwie główne grupy: <span style=color:red>samożywne i cudzożywne</span>. 
+      Samożywne to rośliny oraz fotosyntetyzujące protisty i bakterie. Organizmy samożywne nazywamy też producentami.
+      Cała reszta to gatunki cudzożywne. Dzielą się na <span style=color:red>konsumentów i reducentów</span>, zwanych też destruentami. Reducenci odżywiają się 
+      martwą materią organiczną, taką jak obumarłe drzewa, opadłe liście czy szczątki zwierząt niejadalne dla konsumentów.
+      Należą do nich grzyby, niektóre bakterie, dżdżownice i niektóre chrząszcze. Konsumenci zjadają inne organizmy - to przede wszystkim zwierzęta.
+    </p>
+<!--Koniec Wpisu-->
+
+<!--Rozwinięcie-->
+<table style=" width:100%; border: 3px solid black; border-radius: 12px;">
+  <tr>
+    <td style="text-align:left; padding:12px; border-bottom:2px solid #000000">Drapieżnik to organizm który  odżywia się pokarmem zwierzęcym. Poluje, zabija i zjada 
+    zwierzęta. Nie musi być duży. Drapieżniki można znaleźć wśród wszystkich grup zwierząt ale nie tylko. 
+    Istnieją polujące protisty, grzyby i rośliny. Zdjęcie po prawiej to ofiara drapieżnika, należy również zapamiętać,
+    że organizmy polujące na muchy, komary i różne inne stworzenia to też drapieżniki. </td>
+    <td style="text-align:right; padding:12px;">
+      <img src="food.jpg" style="border:3px solid #ffaa0b; border-radius:8px;" width="250" height="200" padding:12px;>
+    </td>
+  </tr>
+  <tr>
+    <td style="text-align:left; padding:12px;">Drapieżniki stosują różne strategie łowieckie. Szczupaki i modliszki polują z zasadzki, bociany, 
+      lisy i borsuki cierpliwie przeszukują teren w poszukiwaniu małych ofiar, a wilki gonią zdobycz, 
+      wpędzając ją w pułapkę - bagno, brzeg jeziora - gdzie czeka inny członek watahy. Rośliny mięsożerne 
+      przywabiają owady zapachem, pająki budują sieci, a sokoły atakują ptaki z góry, chwytając je ostrymi szponami.
+Drapieżniki polują na ofiary mniejsze, podobne lub większe od siebie. Bocian zjada kilkanaście płazów i gryzoni 
+dziennie, rodzina wilków - jednego jelenia w kilka dni. Większość drapieżników chętnie żywi się też padliną. 
+Padły jeleń może być źródłem pokarmu dla wielu zwierząt - zimą nawet przez ponad tydzień, latem znacznie krócej.</td>
+    <td style="text-align:right; padding:12px;">
+      <img src="wolf_howl.gif" style="border:3px solid #ffaa0b; border-radius:8px;" width="250" height="200" padding:12px;>
+    </td>
+  </tr>
+</table>
+<br><br>
+<!--Koniec Rozwinięcia-->
+
+<!--Link do stron-->
+    <div style="text-align: center;">
+      <br>
+        <a href="str1.html" style="display:inline-block; serif;">
+        <button style="background-color: #ffaa0b; color:#ffffff; padding:12px 24px; border-radius:8px; cursor:pointer; "display: inline-block; border-radius:px;>
+        Myszołów zwyczajny</button>
+        </a>
+        <a href="str2.html" style="display:inline-block; serif;">
+        <button style="background-color: #ffaa0b; color:#ffffff; padding:12px 24px; border-radius:8px; cursor:pointer; "display: inline-block; border-radius:px;>
+        Lis Rudy</button>
+        </a>
+        <a href="str3.html" style="display:inline-block; serif;">
+        <button style="background-color: #ffaa0b; color:#ffffff; padding:12px 24px; border-radius:8px; cursor:pointer; "display: inline-block; border-radius:px;>
+        Dymówka</button>
+        </a>
+        <a href="str4.html" style="display:inline-block; serif;">
+        <button style="background-color: #ffaa0b; color:#ffffff; padding:12px 24px; border-radius:8px; cursor:pointer; "display: inline-block; border-radius:px;>
+        Bocian czarny</button>
+        </a>
+        <a href="str5.html" style="display:inline-block; serif:">
+        <button style="background-color: #ffaa0b; color:#ffffff; padding:12px 24px; border-radius:8px; cursor:pointer; "display: inline-block; border-radius:px;>
+        Pływacz zwyczajny</button>
+        </a>
+    </div>
+<!--Koniec Linków do stron-->
+
+<!--Podpis-->
+<p style="font-size: x-large; text-align: center; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Mikołaj Gontarek</p>
+<!--Jeżeli Pan z jakiegoś powodu sprawdza kod i widzi, te szare miejsca, to jest tylko moja hiperfiksacja
+o organizacji. To właśnie był jeden z głównych powodów porzucenia mojego poprzedniego tematu.-->
+</body>
+</html>
